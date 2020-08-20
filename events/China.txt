@@ -1,0 +1,24 @@
+﻿###########################
+# Russian Events
+###########################
+
+add_namespace = russia
+
+#
+country_event = {
+	id = russia.1
+	title = russia.1.t
+	desc = russia.1.d
+	picture = GFX_report_event_chinese_soldiers_fighting
+	
+	is_triggered_only = yes
+	
+	option = { # Breaking point!
+		name = russia.1.a
+		ai_chance = { factor = 90 }
+	}
+	option = { # Make more concessions
+		name = russia.1.b
+		ai_chance = { factor = 10 }
+	}
+}

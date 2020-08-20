@@ -1,0 +1,26 @@
+russia_reunite_ussr = {
+	annex_country = {
+		target = BLR
+		transfer_troops = yes
+	}
+	annex_country = {
+		target = KAZ
+		transfer_troops = yes
+	}
+	annex_country = {
+		target = UZB
+		transfer_troops = yes
+	}
+	annex_country = {
+		target = TAJ
+		transfer_troops = yes
+	}
+	annex_country = {
+		target = TMS
+		transfer_troops = yes
+	}
+	annex_country = {
+		target = KYR
+		transfer_troops = yes
+	}
+}

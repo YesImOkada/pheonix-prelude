@@ -1,0 +1,9 @@
+russia_reincorporate_belarus = {
+	IF = {
+	is_in_faction_with = RUS
+	}
+	annex_country = {
+		target = BLR
+		transfer_troops = yes
+	}
+}

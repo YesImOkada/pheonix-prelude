@@ -1,0 +1,1822 @@
+﻿focus_tree = {
+	id = russian_focus
+	
+	country = {
+		factor = 0
+		
+		modifier = {
+			add = 10
+			tag = RUS
+		}
+
+	}
+	
+	default = no
+	
+	continuous_focus_position = { x = 50 y = 1000 }
+
+	### Industrual Branch ###
+
+	focus = {
+		id = RUS_economic_reform
+		icon = GFX_goal_generic_consumer_goods
+		x = 0
+		y = 0
+		#relative_position_id = RUS_decentralize_kremlin
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10
+		#prerequisite = { focus = RUS_open_political_discussion }
+		
+		available_if_capitulated = no
+
+		completion_reward = {
+			247 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			219 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			223 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_industrial_boost
+		icon = GFX_goal_generic_production
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_economic_reform
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_economic_reform }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = industrial_research
+				bonus = 1
+				uses = 1
+				category = industry
+		} 
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_research_slot
+		icon = GFX_focus_research
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_industrial_boost
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_industrial_boost }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_research_slot = 1
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_mil_spending
+		icon = GFX_goal_generic_construct_mil_factory
+		x = 2
+		y = 1.5
+		relative_position_id = RUS_economic_reform
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_economic_reform }
+		prerequisite = { focus = RUS_civ_factories_1 }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			246 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1MF
+			}
+			224 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1MF
+			}
+			260 = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1MF
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_dockyards
+		icon = GFX_goal_generic_construct_naval_dockyard
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_mil_spending
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_mil_spending }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1DY
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1DY
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1DY
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = dockyard
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1DY
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_civ_factories_1
+		icon = GFX_goal_generic_construct_civ_factory
+		x = 4
+		y = 0
+		#relative_position_id = RUS_mil_spending
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		#prerequisite = { focus = RUS_mil_spending }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			247 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			219 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			223 = {
+				add_extra_state_shared_building_slots = 2
+				add_building_construction = {
+					type = industrial_complex
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_infastructure_1
+		icon = GFX_goal_generic_construct_infrastructure
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_civ_factories_1
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_civ_factories_1 }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			255 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_infastructure_1IS
+			}
+			254 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_infastructure_1IS
+			}
+			246 = {
+				add_building_construction = {
+					type = infrastructure
+					level = 2
+					instant_build = yes
+				}
+				set_state_flag = RUS_infastructure_1IS
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_mixed_factories
+		icon = GFX_goal_generic_construction2
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_infastructure_1
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_infastructure_1 }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+			random_owned_controlled_state = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+				set_state_flag = RUS_industrial_effort_1CF
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_research_treaty
+		icon = GFX_goal_generic_scientific_exchange
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_mixed_factories
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_mixed_factories }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Political / Diplomatic Branch ###
+	
+	focus = {
+		id = RUS_strengthen_putin
+		icon = GFX_goal_generic_demand_territory
+		x = 12
+		y = 0
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 120
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_china_friend
+		icon = GFX_focus_prc_proclaim_the_peoples_republic
+		x = -4
+		y = 1.5
+		relative_position_id = RUS_strengthen_putin
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_strengthen_putin }
+		mutually_exclusive = { focus = RUS_china_unfriend }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = PRC
+				modifier = offered_support
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_china_unfriend
+		icon = GFX_focus_chi_cooperation_with_the_nationalists
+		x = -2
+		y = 1.5
+		relative_position_id = RUS_strengthen_putin
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_strengthen_putin }
+		mutually_exclusive = { focus = RUS_china_friend }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = PRC
+				modifier = protest_action
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_joint_china_research
+		icon = GFX_goal_tfv_generic_tech_sharing
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_china_friend
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_china_friend }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_tech_bonus = {
+				name = electronics_research
+				bonus = 0.5
+				uses = 2
+				category = electronics
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_back_china
+		icon = GFX_goal_generic_more_territorial_claims
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_joint_china_research
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_joint_china_research }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = PRC 
+				modifier = anti_capitalist_diplomacy_focus
+			}
+			add_opinion_modifier = {
+				target = VIN
+				modifier = attache_sent_to_enemy
+			}
+			add_opinion_modifier = {
+				target = RAJ
+				modifier = attache_sent_to_enemy
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_fund_us_coups
+		icon = GFX_goal_generic_propaganda
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_back_china
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_back_china }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_sell_weapons
+		icon = GFX_focus_generic_support_the_left_right
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_fund_us_coups
+		
+			available = {
+			civilwar_target = USA
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_fund_us_coups }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_anti_japan
+		icon = GFX_focus_AST_war_japan
+		x = -2
+		y = 1.5
+		relative_position_id = RUS_back_china
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_back_china }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = JAP
+				modifier = unprovoked_aggression
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_japan_war
+		icon = GFX_focus_attack_japan
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_anti_japan
+		
+			available = {
+			OR = { has_war_with = USA has_war_with = GER }
+			OR = { has_war_with = KOR }
+		}
+		
+			bypass = {
+			has_war_with = JAP
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_anti_japan }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JAP
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Russo-Sino Split ###
+	
+	focus = {
+		id = RUS_secure_manchuria
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_china_unfriend
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_china_unfriend }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_recognize_roc
+		icon = GFX_goal_generic_fortify_city
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_secure_manchuria
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_secure_manchuria }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Main Branch ###
+	
+	focus = {
+		id = RUS_nato_diplomacy
+		icon = GFX_goal_generic_national_unity
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_strengthen_putin
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_strengthen_putin }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			#get an event
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_manpower_recruitment
+		icon = GFX_focus_generic_manpower
+		x = 4
+		y = 1.5
+		relative_position_id = RUS_strengthen_putin
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_strengthen_putin }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_manpower = 10000
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_crimean_claims
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_nato_diplomacy
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_nato_diplomacy }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_state_core = 137
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_oil_production
+		icon = GFX_goal_generic_oil_refinery
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_crimean_claims
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_crimean_claims }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_resource = {
+				type = oil
+				amount = 20
+				state = 516
+			}
+			add_resource = {
+				type = oil
+				amount = 25
+				state = 644
+			}
+			add_resource = {
+				type = oil
+				amount = 25
+				state = 262
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_ally_iran
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_oil_production
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_oil_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_opinion_modifier = {
+				target = PER
+				modifier = aided_industry
+			}
+			418 = {
+			add_extra_state_shared_building_slots = 4
+			add_building_construction = {
+				type = industrial_complex
+				level = 1
+				instant_build = yes
+				}
+			}
+			414 = {
+			add_extra_state_shared_building_slots = 3
+			add_building_construction = {
+				type = industrial_complex
+				level = 2
+				instant_build = yes
+				}
+			}
+			
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_enemy_iran
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_oil_production
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_oil_production }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = { 
+				type = puppet_wargoal_focus
+				target = PER
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_eastern_bloc
+		icon = GFX_goal_tripartite_pact
+		x = -1
+		y = 4.5
+		relative_position_id = RUS_manpower_recruitment
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_ally_iran focus = RUS_enemy_iran }
+		prerequisite = { focus = RUS_good_army }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+			create_faction = "Eastern Powers"
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invite_belarus
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -3
+		y = 1.5
+		relative_position_id = RUS_eastern_bloc
+		
+			available = {
+			NOT = { is_in_faction_with = JAP }
+			NOT = { has_war_with = BLR }
+		}
+		
+			bypass = {
+			is_in_faction_with = BLR
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_eastern_bloc }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			BLR = { 
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_summon_stans
+		icon = GFX_goal_generic_positive_trade_relations
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_eastern_bloc
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_eastern_bloc }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			KAZ = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+			UZB = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+			KYR = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+			TAJ = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+			TMS = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invite_georgia
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_invite_belarus
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_invite_belarus }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			GEO = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invite_azr_and_arm
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_summon_stans
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_summon_stans }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			AZR = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+			ARM = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_legacy_of_ussr
+		icon = GFX_goal_generic_war_with_comintern
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_invite_georgia
+		
+			available = {
+			BLR = { is_in_faction_with = RUS }
+			KAZ = { is_in_faction_with = RUS }
+			TMJ = { is_in_faction_with = RUS }
+			UZB = { is_in_faction_with = RUS }
+			KYR = { is_in_faction_with = RUS }
+			TMS = { is_in_faction_with = RUS }
+			GEO = { is_in_faction_with = RUS }
+			AZR = { is_in_faction_with = RUS }
+			ARM = { is_in_faction_with = RUS }
+			UKR = { is_in_faction_with = RUS }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_invite_georgia }
+		prerequisite = { focus = RUS_invite_azr_and_arm }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			russia_reunite_ussr = yes
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_pressure_ukraine
+		icon = GFX_goal_generic_political_pressure
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_eastern_bloc
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_eastern_bloc }
+		mutually_exclusive = { focus = RUS_invite_ukraine }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invite_ukraine
+		icon = GFX_goal_generic_positive_trade_relations
+		x = 3
+		y = 1.5
+		relative_position_id = RUS_eastern_bloc
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_eastern_bloc }
+		mutually_exclusive = { focus = RUS_pressure_ukraine }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_crimea_ultimatum
+		icon = GFX_goal_demand_sudetenland
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_pressure_ukraine
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_pressure_ukraine }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = UKR
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	
+	focus = {
+		id = RUS_take_moldova
+		icon = GFX_goal_generic_major_war
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_crimea_ultimatum
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_crimea_ultimatum }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = annex_everything
+				target = MOL
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+		
+	focus = {
+		id = RUS_turn_turkey
+		icon = GFX_goal_generic_propaganda
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_take_moldova
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_take_moldova }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			TUR = {
+			add_opinion_modifier = {
+				target = RUS
+				modifier = ger_ita_alliance_focus
+			}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_thrust_south
+		icon = GFX_focus_generic_strike_at_democracy1
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_take_moldova
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_take_moldova }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SYR
+			}
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = IRQ
+			}	
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = JOR
+			}		
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = LEB
+			}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invade_saudi_arabia
+		icon = GFX_goal_generic_oil_refinery
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_thrust_south
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_thrust_south }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = SAU
+			}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_invade_egypt
+		icon = GFX_goal_generic_major_war
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_thrust_south
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_thrust_south }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			create_wargoal = {
+				type = puppet_wargoal_focus
+				target = EGY
+			}		
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Army ###
+	
+	focus = {
+		id = RUS_mass_mobilization
+		icon = GFX_focus_generic_little_entente
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_manpower_recruitment
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_manpower_recruitment }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_superior_training
+		icon = GFX_focus_chi_army_reform
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_manpower_recruitment
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_manpower_recruitment }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_tank_research_boost
+		icon = GFX_goal_generic_army_tanks
+		x = 0
+		y = 2
+		relative_position_id = RUS_manpower_recruitment
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_mass_mobilization focus = RUS_superior_training }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_good_army
+		icon = GFX_goal_generic_axis_build_infantry
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_tank_research_boost
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_tank_research_boost }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	### Naval and Air ###
+	
+	focus = {
+		id = RUS_better_carriers
+		icon = GFX_goal_generic_navy_carrier
+		x = 20
+		y = 0
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_submarine_focus
+		icon = GFX_goal_generic_navy_submarine
+		x = 0
+		y = 1.5
+		relative_position_id = RUS_better_carriers
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_better_carriers }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_amphibious_craft
+		icon = GFX_goal_generic_amphibious_assault
+		x = -1
+		y = 1.5
+		relative_position_id = RUS_submarine_focus
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_submarine_focus }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	focus = {
+		id = RUS_paratroopers
+		icon = GFX_focus_generic_paratrooper
+		x = 1
+		y = 1.5
+		relative_position_id = RUS_submarine_focus
+		
+			available = {
+			#NOT = { is_in_faction_with = JAP }
+			#NOT = { has_country_flag = britain_enforced_our_loyalty }
+		}
+		
+			bypass = {
+
+		}
+		cost = 10	
+		prerequisite = { focus = RUS_submarine_focus }
+		
+		cancel_if_invalid = yes
+		continue_if_invalid = no
+		available_if_capitulated = no
+
+		completion_reward = {
+			add_political_power = 60
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+}	
