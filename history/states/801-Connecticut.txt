@@ -1,0 +1,15 @@
+state={
+	id=801
+	name="STATE_801"
+	history ={
+		owner = USA
+		add_core_of = USA
+	}	
+	
+	provinces={
+		6909 9847 
+	}
+	manpower=7540
+	buildings_max_level_factor=1.000
+	state_category = large_city
+}

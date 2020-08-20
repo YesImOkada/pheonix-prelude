@@ -1,0 +1,15 @@
+state={
+	id=802
+	name="STATE_802"
+	history ={
+		owner = USA
+		add_core_of = USA
+	}	
+	
+	provinces={
+		9832 
+	}
+	manpower=5600
+	buildings_max_level_factor=1.000
+	state_category = town
+}

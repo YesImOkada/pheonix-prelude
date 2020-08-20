@@ -1,0 +1,22 @@
+state={
+	id=804
+	name="STATE_804"
+			history={
+		owner = KOS
+		controller = KOS
+
+		buildings = {
+			industrial_complex = 2
+			infrastructure = 6
+		}
+		add_core_of = YUG
+		add_core_of = SER
+		add_core_of = KOS
+	}
+	provinces={
+		6940 9849 
+	}
+	state_category = town
+	manpower=78351
+	buildings_max_level_factor=1.000
+}

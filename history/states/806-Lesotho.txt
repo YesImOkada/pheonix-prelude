@@ -1,0 +1,21 @@
+state={
+	id=806
+	name="STATE_806"
+	
+	history={
+	owner = LES
+	add_core_of = LES
+	
+	buildings = {
+			infrastructure = 2
+			industrial_complex = 1
+		}
+	}
+	
+	provinces={
+		4556 
+	}
+	manpower=75901
+	buildings_max_level_factor=1.000
+	state_category = town
+}

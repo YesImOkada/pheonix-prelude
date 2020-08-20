@@ -1,0 +1,21 @@
+state={
+	id=805
+	name="STATE_805"
+		history={
+		owner = SER
+		controller = SER
+
+		buildings = {
+			infrastructure = 6
+		}
+		add_core_of = YUG
+		add_core_of = SER
+	}
+	provinces={
+		11577 11580 
+	}
+	
+	state_category = town
+	manpower=67543
+	buildings_max_level_factor=1.000
+}
